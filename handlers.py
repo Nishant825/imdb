@@ -4,20 +4,20 @@ from telegram.ext import CommandHandler, MessageHandler, Filters, CallbackQueryH
 from utils import save_chart
 
 
-def start(update, context):
-    # button_labels = ['BTC', 'ETH']
-    # crypto_data = get_crypto_data()
-    button_labels = [i["symbol"].upper() for i in crypto_data]
-    keyboard = [
-        [InlineKeyboardButton(label, callback_data=label)] for label in button_labels
-    ]
+# def start(update, context):
+#     # button_labels = ['BTC', 'ETH']
+#     # crypto_data = get_crypto_data()
+#     button_labels = [i["symbol"].upper() for i in crypto_data]
+#     keyboard = [
+#         [InlineKeyboardButton(label, callback_data=label)] for label in button_labels
+#     ]
     
-    keyboard = [keyboard[i] + keyboard[i+1] + keyboard[i+2] for i in range(0, len(keyboard), 3)]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    # Send the message with the buttons
-    context.bot.send_message(chat_id=update.effective_chat.id, text='Welcome to live crypto Data:')
-    context.bot.send_message(chat_id=update.effective_chat.id, text='Please choose an Symbol:',
-                             reply_markup=reply_markup)
+#     keyboard = [keyboard[i] + keyboard[i+1] + keyboard[i+2] for i in range(0, len(keyboard), 3)]
+#     reply_markup = InlineKeyboardMarkup(keyboard)
+#     # Send the message with the buttons
+#     context.bot.send_message(chat_id=update.effective_chat.id, text='Welcome to live crypto Data:')
+#     context.bot.send_message(chat_id=update.effective_chat.id, text='Please choose an Symbol:',
+#                              reply_markup=reply_markup)
 
 
 
